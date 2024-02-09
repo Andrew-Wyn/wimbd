@@ -13,7 +13,6 @@ def main():
             data[url] += int(count)
         except:
             pass
-
     
     for k, v in data.items():
         print(json.dumps({'url': k, 'count': v}))

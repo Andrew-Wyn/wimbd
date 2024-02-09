@@ -2,6 +2,8 @@ import json
 import gzip
 from tqdm import tqdm
 import smart_open
+from datasets import Dataset
+
 
 def read_jsonl_smart_open_file(in_file: str):
     smart_open
@@ -20,6 +22,10 @@ def read_jsonl_file(in_file: str):
         for line in f:
             yield json.loads(line.strip())
 
+def read_arrow_file(in_file: str):
+    ds = Dataset.from_file(in_file)
+    for row in ds:
+        yield row
 
 def read_domains(in_f, key):
     with open(in_f, 'r') as f:
