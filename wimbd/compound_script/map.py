@@ -25,7 +25,7 @@ def main():
     elif args.load == "arrow":
         data = read_arrow_file(args.in_file)
         
-    stopper = 0
+    #stopper = 0
     for row in data:
 
         if args.dataset == "culturax":
@@ -52,9 +52,9 @@ def main():
         # base-url, suffix, number of words, number of characters 
         print(base_url, suffix , word_count, character_count)
 
-        stopper += 1
-        if stopper == 2:
-            return
+        #stopper += 1
+        #if stopper == 2:
+        #    return
 
 
 if __name__ == "__main__":
