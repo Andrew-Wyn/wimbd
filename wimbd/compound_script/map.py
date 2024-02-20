@@ -53,7 +53,7 @@ def main():
         print(base_url, suffix , word_count, character_count)
 
         stopper += 1
-        if stopper == 10000:
+        if stopper == 2:
             return
 
 
