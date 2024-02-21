@@ -32,4 +32,4 @@ bash wimbd/compound_script/run.sh \
     json \
     redpajamav2_en_wimbd_res \
     redpajamav2 \
-    $(find /leonardo/prod/data/ai/red_pajama/2.0/it/documents/ -name '*.json')
+    $(find /leonardo/prod/data/ai/red_pajama/2.0/en/documents/ -name '*.json')
