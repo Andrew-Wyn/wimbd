@@ -2,7 +2,7 @@ import argparse
 from urllib.parse import urlparse
 import tldextract
 from uniseg.wordbreak import words
-from wimbd.utils.utils import read_json_gz_file, read_jsonl_file, read_arrow_file
+from wimbd.utils.utils import read_json_gz_file, read_jsonl_file, read_arrow_file, read_jsonl_smart_open_file
 
 CULTA_X_SOURCES=["mC4", "OSCAR-2301", "OSCAR-2201"]
 
@@ -19,13 +19,13 @@ def main():
     args = parse.parse_args()
 
     if args.load == "json":
-        data = read_jsonl_file(args.in_file)
+        data = read_jsonl_smart_open_file(args.in_file)
     elif args.load == "gz":
         data = read_json_gz_file(args.in_file)
     elif args.load == "arrow":
         data = read_arrow_file(args.in_file)
         
-    #stopper = 0
+    # stopper = 0
     for row in data:
 
         if args.dataset == "culturax":
@@ -52,9 +52,9 @@ def main():
         # base-url, suffix, number of words, number of characters 
         print(base_url, suffix , word_count, character_count)
 
-        #stopper += 1
-        #if stopper == 2:
-        #    return
+        # stopper += 1
+        # if stopper == 2:
+        #     return
 
 
 if __name__ == "__main__":
